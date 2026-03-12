@@ -1,9 +1,10 @@
 @import "tailwindcss";
 
-/* Then add your custom styles below */
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
+
+  --header-height: 96px;
 }
 
 .dark {
@@ -11,7 +12,19 @@
   --foreground: oklch(0.985 0 0);
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+/* In globals.css or component */
+.text-outline-black {
+  -webkit-text-stroke: 2px black;      /* black outline/stroke */
+  text-stroke: 2px black;              /* standard (fallback) */
+  paint-order: stroke fill;            /* stroke behind fill → clean look */
 }
