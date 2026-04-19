@@ -18,9 +18,11 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold text-white mb-5">Quick Links</h4>
             <ul className="space-y-3 text-sm">
-              <li><a href="#services" className="hover:text-blue-400">Services</a></li>
-              <li><a href="#why-us" className="hover:text-blue-400">Why Choose Us</a></li>
-              <li><a href="#contact" className="hover:text-blue-400">Get a Quote</a></li>
+              <li><a href="#services" className="hover:text-brand transition-colors">Services</a></li>
+              <li><a href="#why-us"   className="hover:text-brand transition-colors">Why Choose Us</a></li>
+              <li><a href="#team"     className="hover:text-brand transition-colors">Meet the Team</a></li>
+              <li><a href="#faq"      className="hover:text-brand transition-colors">FAQ</a></li>
+              <li><a href="#contact"  className="hover:text-brand transition-colors">Get a Quote</a></li>
             </ul>
           </div>
 
@@ -28,11 +30,11 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold text-white mb-5">Services</h4>
             <ul className="space-y-3 text-sm">
-              <li>Leak Detection & Repair</li>
-              <li>Water Heater Services</li>
-              <li>Emergency Plumbing</li>
-              <li>Toilet & Fixture Repair</li>
-              <li>Whole-Home Repiping</li>
+              <li><a href="#services" className="hover:text-brand transition-colors">Leak Detection & Repair</a></li>
+              <li><a href="#services" className="hover:text-brand transition-colors">Water Heater Services</a></li>
+              <li><a href="#services" className="hover:text-brand transition-colors">Emergency Plumbing</a></li>
+              <li><a href="#services" className="hover:text-brand transition-colors">Toilet & Fixture Repair</a></li>
+              <li><a href="#services" className="hover:text-brand transition-colors">Whole-Home Repiping</a></li>
             </ul>
           </div>
 
@@ -45,7 +47,7 @@ export default function Footer() {
               <div className="flex items-start gap-3">
                 <Phone size={20} className="text-brand mt-1" />
                 <div>
-                  <a href={PHONE_TEL} className="hover:text-blue-400 font-medium">
+                  <a href={PHONE_TEL} className="hover:text-brand transition-colors font-medium">
                     {PHONE_DISPLAY}
                   </a>
                 </div>
@@ -53,7 +55,7 @@ export default function Footer() {
 
               <div className="flex items-start gap-3">
                 <Mail size={20} className="text-brand mt-1" />
-                <a href={`mailto:${EMAIL}`} className="hover:text-blue-400">
+                <a href={`mailto:${EMAIL}`} className="hover:text-brand transition-colors">
                   {EMAIL}
                 </a>
               </div>

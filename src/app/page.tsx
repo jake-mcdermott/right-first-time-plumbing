@@ -48,7 +48,7 @@ export default function Home() {
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.65) 100%)" }}></div>
 
         <div className="container mx-auto px-6 py-28 text-center relative z-10">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight md:leading-snug text-white text-outline-black drop-shadow-xl">
@@ -59,10 +59,15 @@ export default function Home() {
             Serving Carrboro, Chapel Hill & Surrounding Areas
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+          <div className="inline-flex items-center gap-2 bg-white/15 border border-white/30 text-white text-sm font-semibold px-4 py-2 rounded-full mb-8 backdrop-blur-sm">
+            <Clock size={16} />
+            24/7 Emergency Service Available
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <a
               href={PHONE_TEL}
-              className="bg-white text-black font-bold py-5 px-10 rounded-lg shadow-lg transition transform hover:-translate-y-1 hover:scale-105 flex items-center justify-center gap-3"
+              className="bg-brand text-white font-bold py-5 px-10 rounded-lg shadow-lg transition transform hover:-translate-y-1 hover:scale-105 flex items-center justify-center gap-3"
             >
               <Phone size={28} />
               {PHONE_DISPLAY}
@@ -74,11 +79,6 @@ export default function Home() {
               Get a Free Quote
             </a>
           </div>
-
-          <p className="mt-4 text-lg md:text-xl flex items-center justify-center gap-3 text-white/80 font-medium drop-shadow-md">
-            <Clock size={22} />
-            24/7 Emergency Service Available
-          </p>
         </div>
       </section>
 
@@ -114,41 +114,62 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Meet Owen */}
-      <section className="py-20 bg-gray-50">
+      {/* Meet the Team */}
+      <section id="team" className="py-20 bg-gray-50">
         <div className="container mx-auto px-6 max-w-6xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900">
-            Meet Owen
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">
+            Meet the Team
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-gray-200">
-              <Image
-                src="/owen-van.jpg"
-                alt="Owen McDermott standing next to his Right First Time Plumbing van"
-                fill
-                className="object-cover"
-                sizes="(min-width: 768px) 50vw, 100vw"
-              />
-            </div>
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-gray-200">
-              <Image
-                src="/van.jpg"
-                alt="Right First Time Plumbing van"
-                fill
-                className="object-cover"
-                sizes="(min-width: 768px) 50vw, 100vw"
-              />
-            </div>
-          </div>
+          <div className="flex flex-col gap-16">
 
-          <div className="text-center max-w-3xl mx-auto">
-            <h3 className="text-3xl font-bold text-gray-900 mb-2">
-              {OWNER_NAME}
-            </h3>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              Owen has over 30 years of experience in residential and commercial plumbing. Originally from Ireland, he founded Right First Time Plumbing to provide reliable, straightforward service in Carrboro and Chapel Hill. Owen handles all jobs personally and focuses on doing the work properly the first time.
-            </p>
+            {/* Owen */}
+            <div className="flex flex-col md:flex-row gap-10 items-center">
+              <div className="w-full md:w-1/2">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                  <Image
+                    src="/owen-van.jpg"
+                    alt="Owen McDermott standing next to his Right First Time Plumbing van"
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                  />
+                </div>
+              </div>
+              <div className="w-full md:w-1/2">
+                <h3 className="text-3xl font-bold text-gray-900 mb-1">Owen McDermott</h3>
+                <p className="text-brand font-semibold text-lg mb-4">Owner & Master Plumber</p>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Owen has over 30 years of experience in residential and commercial plumbing. Originally from Ireland, he founded Right First Time Plumbing to provide reliable, straightforward service in Carrboro and Chapel Hill. Owen handles all jobs personally and focuses on doing the work properly the first time.
+                </p>
+              </div>
+            </div>
+
+            {/* Divider */}
+            <hr className="border-gray-200" />
+
+            {/* Christian */}
+            <div className="flex flex-col md:flex-row-reverse gap-10 items-center">
+              <div className="w-full md:w-1/2">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                  <Image
+                    src="/chris-van.jpg"
+                    alt="Christian McDermott, apprentice plumber at Right First Time Plumbing"
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                  />
+                </div>
+              </div>
+              <div className="w-full md:w-1/2">
+                <h3 className="text-3xl font-bold text-gray-900 mb-1">Christian McDermott</h3>
+                <p className="text-brand font-semibold text-lg mb-4">Apprentice Plumber</p>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Christian is Owen's son and is learning the trade from the ground up. Working alongside his father, he's gaining hands-on experience across all aspects of residential and commercial plumbing.
+                </p>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -189,7 +210,7 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 bg-gray-50">
+      <section id="faq" className="py-20 bg-gray-50">
         <div className="container mx-auto px-6 max-w-3xl">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-900">
             Frequently Asked Questions
@@ -234,7 +255,7 @@ export default function Home() {
             <a
               href={PHONE_TEL}
               className="
-                flex-1 inline-flex items-center justify-center
+                flex-1 inline-flex items-center justify-center whitespace-nowrap
                 bg-white text-blue-950 hover:bg-gray-100
                 font-black text-2xl md:text-3xl
                 py-8 px-10 rounded-2xl
@@ -249,7 +270,7 @@ export default function Home() {
 
             <a
               href={EMAIL_QUOTE_HREF}
-              className="flex-1 inline-flex items-center justify-center bg-transparent border-4 border-white text-white hover:bg-white hover:text-blue-950 font-black text-2xl md:text-3xl py-8 px-10 rounded-2xl shadow-2xl transition-all transform hover:-translate-y-2 hover:scale-105 duration-300 gap-5 min-w-[280px] md:min-w-[450px]"
+              className="flex-1 inline-flex items-center justify-center whitespace-nowrap bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-950 font-black text-2xl md:text-3xl py-8 px-10 rounded-2xl shadow-2xl transition-all transform hover:-translate-y-2 hover:scale-105 duration-300 gap-5 min-w-[280px] md:min-w-[450px]"
             >
               <Mail size={40} className="flex-shrink-0" />
               Email for a Quote

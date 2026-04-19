@@ -99,7 +99,7 @@ export default function Header() {
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className={`
-                  relative transition-colors duration-200 cursor-pointer
+                  group relative transition-colors duration-200 cursor-pointer
                   text-gray-700
                   hover:text-brand-dark
                   ${active === item.id ? "text-brand" : ""}
@@ -110,10 +110,9 @@ export default function Header() {
                 <span
                   className={`
                     absolute left-0 -bottom-1 h-[2px] bg-brand transition-all duration-300 ease-out
-                    ${active === item.id 
-                      ? "w-full" 
-                      : "w-0 group-hover:w-full"  // ← hover underline grows
-                    }
+                    ${active === item.id
+                      ? "w-full"
+                      : "w-0 group-hover:w-full"}
                   `}
                 />
               </button>
@@ -141,18 +140,17 @@ export default function Header() {
       </div>
 
         {/* Mobile menu */}
-        {mobileOpen && (
-            
         <div
-            className="
+            className={`
             md:hidden
             absolute left-0 right-0
             top-full
             bg-white
             border-t border-gray-200
             shadow-lg
-            animate-in fade-in slide-in-from-top-2 duration-200
-            "
+            transition-all duration-200 ease-in-out overflow-hidden
+            ${mobileOpen ? "opacity-100 max-h-[500px]" : "opacity-0 max-h-0 pointer-events-none"}
+            `}
         >          
             
             <nav className="flex flex-col px-6 py-6 gap-6 text-lg font-medium text-gray-700">
@@ -178,7 +176,6 @@ export default function Header() {
 
           </nav>
         </div>
-      )}
     </header>
   );
 }

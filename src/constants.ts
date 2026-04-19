@@ -19,9 +19,11 @@ export const SERVICE_AREAS = ["Carrboro", "Chapel Hill", "Hillsborough"] as cons
 
 // ─── Navigation ──────────────────────────────────────────────────────────────
 export const NAV_ITEMS = [
-  { id: "services", label: "Services" },
-  { id: "why-us",   label: "Why Us"   },
-  { id: "contact",  label: "Contact"  },
+  { id: "services", label: "Services"      },
+  { id: "team",     label: "Meet the Team" },
+  { id: "why-us",   label: "Why Us"        },
+  { id: "faq",      label: "FAQ"           },
+  { id: "contact",  label: "Contact"       },
 ] as const;
 
 // ─── FAQ ─────────────────────────────────────────────────────────────────────
