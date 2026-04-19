@@ -1,13 +1,9 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { Phone, Menu, X, Wrench } from "lucide-react";
-
-const navItems = [
-  { id: "services", label: "Services" },
-  { id: "why-us", label: "Why Us" },
-  { id: "contact", label: "Contact" },
-];
+import { Phone, Menu, X } from "lucide-react";
+import Link from "next/link";
+import { NAV_ITEMS, PHONE_TEL, PHONE_DISPLAY } from "@/constants";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -68,7 +64,7 @@ export default function Header() {
       }
     );
 
-    navItems.forEach((item) => {
+    NAV_ITEMS.forEach((item) => {
       const el = document.getElementById(item.id);
       if (el) observer.observe(el);
     });
@@ -81,59 +77,55 @@ export default function Header() {
       ref={headerRef}
       className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm"
     >
-      <div className="container mx-auto px-5 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+      <div className="container mx-auto px-5 sm:px-6 lg:px-8 flex items-center justify-between">
 
         {/* Logo */}
-        <div
-          className="flex items-center gap-3 sm:gap-4 cursor-pointer"
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        >
-          <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full shadow-md flex items-center justify-center">
-            <Wrench size={32} className="text-white" strokeWidth={2.2} />
-          </div>
-
-          <div className="leading-tight">
-            <div className="text-xl sm:text-2xl font-extrabold text-blue-950 tracking-tight">
-              Right First Time
-            </div>
-            <div className="text-xs sm:text-sm font-semibold text-blue-700">
-              Plumbing
-            </div>
-          </div>
-        </div>
-
+        <div className="flex items-center">
+          <Link href="/" className="block h-20 sm:h-20 lg:h-25 flex items-center">
+            <img
+              src="/logo.svg"
+              alt="Right First Time Plumbing Logo"
+              className="h-full w-auto transition-transform hover:scale-105 object-contain"
+            />
+          </Link>
+        </div> 
+        
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-10">
 
-          <nav className="flex gap-8 font-medium text-gray-700">
-
-            {navItems.map((item) => (
+        <nav className="flex gap-8 font-medium text-gray-700">
+          {NAV_ITEMS.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`relative transition-colors cursor-pointer hover:text-blue-700
-                  ${active === item.id ? "text-blue-700" : ""}
+                className={`
+                  relative transition-colors duration-200 cursor-pointer
+                  text-gray-700
+                  hover:text-brand-dark
+                  ${active === item.id ? "text-brand" : ""}
                 `}
               >
                 {item.label}
 
                 <span
                   className={`
-                    absolute left-0 -bottom-1 h-[2px] bg-blue-600 transition-all duration-300
-                    ${active === item.id ? "w-full" : "w-0"}
+                    absolute left-0 -bottom-1 h-[2px] bg-brand transition-all duration-300 ease-out
+                    ${active === item.id 
+                      ? "w-full" 
+                      : "w-0 group-hover:w-full"  // ← hover underline grows
+                    }
                   `}
                 />
               </button>
             ))}
-
           </nav>
 
           <a
-            href="tel:+19195551234"
-            className="bg-blue-700 hover:bg-blue-800 text-white font-semibold px-6 py-3 rounded-lg flex items-center gap-2 shadow-md transition"
+            href={PHONE_TEL}
+            className="bg-brand hover:bg-brand-dark text-white font-semibold px-6 py-3 rounded-lg flex items-center gap-2 shadow-md transition"
           >
             <Phone size={20} />
-            (919) 555-1234
+            {PHONE_DISPLAY}
           </a>
 
         </div>
@@ -165,12 +157,12 @@ export default function Header() {
             
             <nav className="flex flex-col px-6 py-6 gap-6 text-lg font-medium text-gray-700">
 
-            {navItems.map((item) => (
+            {NAV_ITEMS.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-left hover:text-blue-700 transition
-                  ${active === item.id ? "text-blue-700" : ""}
+                className={`text-left hover:text-brand-dark transition
+                  ${active === item.id ? "text-brand" : ""}
                 `}
               >
                 {item.label}
@@ -178,10 +170,10 @@ export default function Header() {
             ))}
 
             <a
-              href="tel:+19195551234"
-              className="bg-blue-700 text-white px-5 py-3 rounded-lg text-center font-semibold"
+              href={PHONE_TEL}
+              className="bg-brand text-white px-5 py-3 rounded-lg text-center font-semibold"
             >
-              Call (919) 555-1234
+              Call {PHONE_DISPLAY}
             </a>
 
           </nav>

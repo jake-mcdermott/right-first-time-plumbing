@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand:      #10aaff;
+  --color-brand-dark: #0d8fe6;
+  --color-brand-deep: #0a4d99;
+  --color-brand-mid:  #1a6fc2;
+}
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);

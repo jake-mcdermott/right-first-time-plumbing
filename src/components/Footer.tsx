@@ -1,31 +1,19 @@
-import { Phone, Mail, MapPin, Wrench } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
+import {
+  PHONE_TEL,
+  PHONE_DISPLAY,
+  EMAIL,
+  LICENSE,
+  SERVICE_AREAS,
+} from "@/constants";
 
 export default function Footer() {
   return (
     <footer className="bg-gradient-to-b from-gray-900 to-gray-950 text-gray-300">
       <div className="container mx-auto px-5 sm:px-6 lg:px-8 py-12 lg:py-16">
         
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           
-          {/* Brand */}
-          <div>
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-700 to-blue-900 rounded-full shadow-xl flex items-center justify-center">
-                <Wrench size={40} className="text-white" />
-              </div>
-
-              <div>
-                <div className="text-2xl font-bold text-white">
-                  Right First Time Plumbing
-                </div>
-              </div>
-            </div>
-
-            <p className="text-sm leading-relaxed">
-              Licensed & insured plumber proudly serving Carrboro, Chapel Hill, Hillsborough, and surrounding areas.
-            </p>
-          </div>
-
           {/* Quick Links */}
           <div>
             <h4 className="text-lg font-semibold text-white mb-5">Quick Links</h4>
@@ -55,29 +43,29 @@ export default function Footer() {
             <div className="space-y-4 text-sm">
 
               <div className="flex items-start gap-3">
-                <Phone size={20} className="text-blue-400 mt-1" />
+                <Phone size={20} className="text-brand mt-1" />
                 <div>
-                  <a href="tel:+19195551234" className="hover:text-blue-400 font-medium">
-                    (919) 555-1234
+                  <a href={PHONE_TEL} className="hover:text-blue-400 font-medium">
+                    {PHONE_DISPLAY}
                   </a>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <Mail size={20} className="text-blue-400 mt-1" />
-                <a href="mailto:service@rightfirsttimeplumbing.com" className="hover:text-blue-400">
-                  service@rightfirsttimeplumbing.com
+                <Mail size={20} className="text-brand mt-1" />
+                <a href={`mailto:${EMAIL}`} className="hover:text-blue-400">
+                  {EMAIL}
                 </a>
               </div>
 
               <div className="flex items-start gap-3">
-                <MapPin size={20} className="text-blue-400 mt-1" />
-                <span>Carrboro • Chapel Hill • Durham</span>
+                <MapPin size={20} className="text-brand mt-1" />
+                <span>{SERVICE_AREAS.join(" • ")}</span>
               </div>
             </div>
 
             <p className="mt-6 text-sm text-gray-500">
-              NC Plumbing License #38563
+              {LICENSE}
             </p>
           </div>
         </div>
