@@ -82,38 +82,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services */}
-      <section id="services" className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-900">
-            Plumbing Services
-          </h2>
-          <p className="text-center text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
-            We get it right the first time. Saving you time and money.
-          </p>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { icon: Droplet,    title: "Leak Detection & Repair",    desc: "Hidden leaks, slab leaks, burst pipes" },
-              { icon: ShowerHead, title: "Shower & Tub Work",          desc: "Installations, conversions, upgrades" },
-              { icon: Toilet,     title: "Toilet Repair & Replacement",desc: "Clogs, running toilets, efficient models" },
-              { icon: Wrench,     title: "Whole-Home Repiping",        desc: "PEX, copper, reliable solutions" },
-              { icon: Droplet,    title: "Water Heater Services",      desc: "Tank & tankless install & repair" },
-              { icon: Truck,      title: "24/7 Emergency Plumbing",    desc: "No hot water, overflows, major leaks" },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="bg-gray-50 p-8 rounded-xl shadow hover:shadow-md transition text-center"
-              >
-                <item.icon size={48} className="text-brand mx-auto mb-6" />
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">{item.title}</h3>
-                <p className="text-gray-600">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Meet the Team */}
       <section id="team" className="py-20 bg-gray-50">
         <div className="container mx-auto px-6 max-w-6xl">
@@ -170,6 +138,38 @@ export default function Home() {
               </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section id="services" className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-900">
+            Plumbing Services
+          </h2>
+          <p className="text-center text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
+            We get it right the first time. Saving you time and money.
+          </p>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { icon: Droplet,    title: "Leak Detection & Repair",    desc: "Hidden leaks, slab leaks, burst pipes" },
+              { icon: ShowerHead, title: "Shower & Tub Work",          desc: "Installations, conversions, upgrades" },
+              { icon: Toilet,     title: "Toilet Repair & Replacement",desc: "Clogs, running toilets, efficient models" },
+              { icon: Wrench,     title: "Whole-Home Repiping",        desc: "PEX, copper, reliable solutions" },
+              { icon: Droplet,    title: "Water Heater Services",      desc: "Tank & tankless install & repair" },
+              { icon: Truck,      title: "24/7 Emergency Plumbing",    desc: "No hot water, overflows, major leaks" },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="bg-gray-50 p-8 rounded-xl shadow hover:shadow-md transition text-center"
+              >
+                <item.icon size={48} className="text-brand mx-auto mb-6" />
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                <p className="text-gray-600">{item.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -280,6 +280,10 @@ export default function Home() {
 
           <p className="text-blue-200 text-lg md:text-xl font-medium mb-4">
             Or reach us directly at {EMAIL}
+          </p>
+
+          <p className="text-blue-200/80 text-base md:text-lg mt-2">
+            Quotes over the phone are free. A callout fee applies if we need to visit to assess the work.
           </p>
         </div>
       </section>

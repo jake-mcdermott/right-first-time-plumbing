@@ -19,8 +19,8 @@ export const SERVICE_AREAS = ["Carrboro", "Chapel Hill", "Hillsborough"] as cons
 
 // ─── Navigation ──────────────────────────────────────────────────────────────
 export const NAV_ITEMS = [
-  { id: "services", label: "Services"      },
   { id: "team",     label: "Meet the Team" },
+  { id: "services", label: "Services"      },
   { id: "why-us",   label: "Why Us"        },
   { id: "faq",      label: "FAQ"           },
   { id: "contact",  label: "Contact"       },
@@ -46,7 +46,7 @@ export const FAQ_ITEMS = [
   {
     question: "Do you offer free estimates?",
     answer:
-      "Yes, we provide free quotes for most plumbing work. Call or email us and we'll discuss the job and give you a clear, upfront price before any work begins.",
+      `Phone quotes are completely free. Just call or email to describe your job and we'll give you a clear, upfront price. If we need to call out to assess the work in person, a callout fee applies. Call us at ${PHONE_DISPLAY} and we can advise which applies to your situation.`,
   },
   {
     question: "How quickly can you respond to a plumbing emergency?",
